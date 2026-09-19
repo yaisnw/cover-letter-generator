@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Turn a job description and your resume into a tailored cover letter in seconds.",
   verification: {
-    google: "7Cd7W2F-x7yd9XCHAnTm03ZSX9-JS6k4K7xszlY8YUo",
+    google: "wZJjrbdodlV4xMypdOBv1qZOUPTvVeS4_7rO5pBWNxw",
   },
 };
 
