@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { CoverLetterForm, DESCRIPTION_STORAGE_KEY } from "@/app/components/cover-letter-form";
+import { CoverLetterForm } from "@/app/components/cover-letter-form";
 import userEvent from "@testing-library/user-event"
 
 jest.mock("@/app/actions", () => ({
