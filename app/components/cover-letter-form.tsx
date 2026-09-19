@@ -8,8 +8,8 @@ const initialState: GenerateCoverLetterState = {
   error: null,
 };
 
-const DESCRIPTION_STORAGE_KEY = "cover-letter-generator:description";
-const COVER_LETTER_STORAGE_KEY = "cover-letter-generator:cover-letter";
+export const DESCRIPTION_STORAGE_KEY = "cover-letter-generator:description";
+export const COVER_LETTER_STORAGE_KEY = "cover-letter-generator:cover-letter";
 
 export function CoverLetterForm() {
   const [state, formAction, isPending] = useActionState(
@@ -22,8 +22,7 @@ export function CoverLetterForm() {
   const [description, setDescription] = useState("");
   const [savedCoverLetter, setSavedCoverLetter] = useState<string | null>(null);
 
-  // localStorage isn't available during SSR, so the saved draft/result can
-  // only be read once mounted in the browser.
+  
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrating from a browser-only store, not derivable during render
     setDescription(localStorage.getItem(DESCRIPTION_STORAGE_KEY) ?? "");
@@ -98,9 +97,9 @@ export function CoverLetterForm() {
           {isPending ? "Generating..." : "Generate Cover Letter"}
         </button>
       </form>
-      {state.error && <p className="text-danger mt-4">{state.error}</p>}
+      {state.error && <p role="alert" className="text-danger mt-4">{state.error}</p>}
       {coverLetter && (
-        <div className="w-full text-left bg-card text-card-foreground my-6 px-8 py-4 rounded-xl">
+        <div role="article" className="w-full text-left bg-card text-card-foreground my-6 px-8 py-4 rounded-xl">
           <div className="flex justify-end">
             <button
               type="button"
